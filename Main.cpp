@@ -63,7 +63,7 @@ void createPlayersArray(ActivePlayers *[],ActivePlayers *);
 void insertPlayerInArray(ActivePlayers *[],ActivePlayers *);
 void displacePlayers(ActivePlayers *[],ActivePlayers *,int);
 void playMatch(ActivePlayers *);
-void selectPlayers(ActivePlayers *,Turn *[]);
+bool selectPlayers(ActivePlayers *,Turn *[]);
 void uploadQuestions(Turn *[]);
 void createQuestionsNode(Questions *&,Questions);
 void insertQuestionInList(Questions *&,Questions *,Questions *);
@@ -210,7 +210,7 @@ void showPlayers(ActivePlayers *players){
 //-------------------- top 10 players
 void showTop10Players(ActivePlayers *top_players[c_max_scores]){
 	//Shows the 10 players with the highest scores
-	cout<<" Top 10 Players!!\n\n";
+	cout<<"\tTop 10 Players!!\n\n";
 	
 	if (top_players[0] != NULL){
 		for (int i=0;i<c_max_scores;i++){
@@ -276,29 +276,27 @@ void top10Players(ActivePlayers *players_tree){
 }
 
 //-------------------- play a match
-void selectPlayers(ActivePlayers *players,Turn *match[2]){
+bool selectPlayers(ActivePlayers *players,Turn *match[2]){
 	//Receives 2 players and makes sure they both exist and that they are not the same
-	char play1[50],play2[50];
+	char play[50];
 
-	fflush(stdin);	
-	cout<<"\nEnter a player: ";
-	cin.getline(play1,50,'\n');
-	while (playerExists(players,play1) == false){
-		fflush(stdin);
-		cout<<"\nThe player does no exist, please try again:  ";
-		cin.getline(play1,50,'\n');
-	}
+	fflush(stdin);
 	
-	cout<<"\nEnter another player: ";
-	cin.getline(play2,50,'\n');
-	while ((playerExists(players,play2) == false)or(strcmp(play1,play2)==0)){
-		fflush(stdin);
-		cout<<"\nInvalid player, please try again  ";
-		cin.getline(play2,50,'\n');
+	for (int i=0;i<2;i++){
+		cout<<"\nEnter a player(type C to cancel at any time):  ";
+		cin.getline(play,50,'\n');
+		while (playerExists(players,play) == false){
+			if ((strcmp(play,"C")==0)||(strcmp(play,"c")==0)){
+				cout<<" \n Option Cancelled. Press any key to return to menu";
+				return false;
+			}
+			fflush(stdin);
+			cout<<"\nThe player does no exist, please try again:   ";
+			cin.getline(play,50,'\n');
+		}
+		match[i]->player = getPointerToPlayer(players,play);
 	}
-	
-	match[0]->player = getPointerToPlayer(players,play1);
-	match[1]->player = getPointerToPlayer(players,play2);
+	return true;
 }
 
 void deleteFullRoulette(Questions *&list,Questions *first_node){
@@ -508,21 +506,25 @@ void gameDevelopment(Turn *match[2]){
 void playMatch(ActivePlayers *players_tree){
 	Turn *match[] = {new Turn,new Turn}; 
 	char player_option;
-	cout<<"\n Do you wish to start a new match?(Y/N): ";
-	cin>>player_option;
-	player_option = tolower(player_option);
 	
-	if (player_option == 'y'){
-		selectPlayers(players_tree,match);
-		uploadQuestions(match);
-		gameDevelopment(match);
-		
-		for (int i=0;i<2;i++){
-			deleteFullRoulette(match[i]->roulette,match[i]->roulette);
-			delete match[i];
+	if (players_tree != NULL){
+		cout<<"\n Do you wish to start a new match?(Y/N): ";
+		cin>>player_option;
+		player_option = tolower(player_option);
+		if (player_option == 'y'){
+			if (selectPlayers(players_tree,match)==false){return;}
+			uploadQuestions(match);
+			gameDevelopment(match);
+			
+			for (int i=0;i<2;i++){
+				deleteFullRoulette(match[i]->roulette,match[i]->roulette);
+				delete match[i];
+			}
+		}else{
+			cout<<"\n Press any key to return to menu";
 		}
 	}else{
-		cout<<"\n Press any key to return to menu";
+		cout<<"\n There are no players available\n Press any key to return to menu\n";
 	}
 }
 
@@ -710,7 +712,6 @@ void mainMenu(ActivePlayers *&players_tree){
 			}
 			case '3':{
 				system("cls");
-				cout<<"\n Top Players: ";
 				top10Players(players_tree);
 				break;
 			}
