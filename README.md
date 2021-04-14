@@ -9,7 +9,7 @@
 - Struct implementation
 
 ## Steps to get started:
-**Prerequisites:** It will be needed for you to download the files present in the repo and save them in the same directory.
+**Prerequisites:** It will be needed for you to download the files present in the repo and save them all in the same directory.
 
 **Windows:** An .exe file is included in the repo so you can run the program directly, you are welcome :)  
 **Linux & Mac:** If you are using Linux or Mac(showoff... just kidding), the .exe file won´t work for you, and a few extra steps will be needed:
@@ -18,9 +18,13 @@
 
 
 ## Actions in the app:
-### The application allow users to do a certain number of actions
+### The application allow users to do the following set of actions:
 - Add players, as long as they aren´t already registered
 - See all players registered
 - See the 10 players with the highest scores
 - Play a match between 2 players
 - Delete players
+
+## Extra Notes:
+- In the repo is included a file named **stored_questions** which contains all the questions you will need to play the game. Furthermore, a pdf file is included with all the questions and it´s answers, so that you can keep track of them.
+- While on the match, enter **"skp"** to skip any question you don´t know, which will remain pending and will be asked again when all other letters are finished.
