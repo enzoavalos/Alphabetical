@@ -25,6 +25,12 @@
 - Play a match between 2 players
 - Delete players
 
+## Game rules:
+- Each player has a set of 26 questions, one for each letter in the alphabet, related with definitions of words found in the dictionary.
+- The players take turns to answer
+- If the current player answers the question correctly, he continues playing. Contrary case, if the player answers incorrectly or skips the question, the turn is then passed onto the other player
+- While on the match, enter **"skp"** to skip any question you don´t know, which will remain pending and will be asked again when all other letters are finished.
+- The game ends when one of the players has answwered all of his questions, without taking into account the state of the other player (if he still has pending questions).
+
 ## Extra Notes:
 - In the repo is included a file named **stored_questions** which contains all the questions you will need to play the game. Furthermore, a pdf file is included with all the questions and it´s answers, so that you can keep track of them.
-- While on the match, enter **"skp"** to skip any question you don´t know, which will remain pending and will be asked again when all other letters are finished.
