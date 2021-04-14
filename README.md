@@ -9,6 +9,9 @@
 - Struct implementation
 
 ## Steps to get started:
+**Prerequisites:** It will be needed for you to download the files present in the repo and save them in the same directory.
+
+**Windows:** An .exe file 
 **Prerequisites:** A local web server installed. I will use [Xampp](https://www.apachefriends.org/es/index.html) in this example
 which is the most famous but you could use any other. [Some examples for you here](https://www.emezeta.com/articulos/15-aplicaciones-para-montar-servidores-web-en-local)
 - Clone the repo in the htdocs folder of your Xampp download. The path should be like ``C:\xampp\htdocs\yourCutePage``
