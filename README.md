@@ -11,19 +11,11 @@
 ## Steps to get started:
 **Prerequisites:** It will be needed for you to download the files present in the repo and save them in the same directory.
 
-**Windows:** An .exe file 
-**Prerequisites:** A local web server installed. I will use [Xampp](https://www.apachefriends.org/es/index.html) in this example
-which is the most famous but you could use any other. [Some examples for you here](https://www.emezeta.com/articulos/15-aplicaciones-para-montar-servidores-web-en-local)
-- Clone the repo in the htdocs folder of your Xampp download. The path should be like ``C:\xampp\htdocs\yourCutePage``
-- Open Xampp and click *Start* of Apache and MySql
-- Open your broser and go to ``localhost\phpMyAdmin``. There, click on the **Import** tab and click **Examine**. A window
-will open and you must select the ``electrocom.sql`` file that is in the file you cloned, in the **Extras** folder. This
-will relieve you from having to create the database tables by yourself
-- In your browser, go to ``localhost\yourCutePage``
-- Have fun with the marvels of programming!
-
-**Note:** The starting admin user is ***iamroot*** and its password is ***pass***.
-The other users are **Kratos**, **Magnolia**, **Felipe**, **Ralph** and **Hermione**, and their passwords are ***1234***
+**Windows:** An .exe file is included in the repo so you can run the program directly, you are welcome :)  
+**Linux & Mac:** If you are using Linux or Mac(showoff... just kidding), the .exe file won´t work for you, and a few extra steps will be needed:
+- To compile the program you must download either an IDE or a (surprise) compiler:
+  - I recommend [code::blocks](https://www.codeblocks.org/) as it is a complete and lightweigh IDE which will serve you just fine, but feel free to use any other ([VS Code](https://code.visualstudio.com/) or [Xcode](https://developer.apple.com/xcode/) for Mac are also good ideas).
+  - In case you want to download just a compiler:
 
 ## Actions in the page:
 ### The page allows the user to do actions according to their authorization levels
