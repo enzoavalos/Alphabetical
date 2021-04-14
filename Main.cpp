@@ -464,7 +464,7 @@ int askQuestions(Turn *&match){
 		match->roulette->word[i] = tolower(match->roulette->word[i]);
 	}
 	
-	if (strcmp(player_answer,"pp") != 0){
+	if (strcmp(player_answer,"skp") != 0){
 		if (strcmp(match->roulette->word,player_answer)==0){
 			match->roulette->state = match->roulette->Correct;
 			return match->roulette->state;
