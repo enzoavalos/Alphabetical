@@ -6,7 +6,7 @@
 #include<time.h>
 using namespace std;
 
-//global variables
+//global constants
 const int c_max_scores = 10;
 const string c_stored_players = "stored_players";
 const string c_questions_file = "stored_questions";
