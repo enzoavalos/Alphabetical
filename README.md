@@ -4,6 +4,7 @@
 ## Topics involved:
 - Binary search trees
 - Circular linked lists
+- Pointers
 - File handling
 - Struct implementation
 
