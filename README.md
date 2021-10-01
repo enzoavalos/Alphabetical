@@ -1,6 +1,9 @@
 # Aplhabetical
 ### Quiz game where players must answer a set of questions based on the letters of the alphabet!
 
+## About the project:
+Project developed for "Introduction to programming II" of Systems Engineering.
+
 ## Topics involved:
 - Binary search trees
 - Circular linked lists
@@ -32,5 +35,5 @@
 - While on the match, enter **"skp"** to skip any question you don´t know, which will remain pending and will be asked again when all other letters are finished.
 - The game ends when one of the players has answered all of his questions, without taking into account the state of the other player (if it still has pending questions).
 
-## Extra Notes:
+### Extra Notes:
 - In the repo is included a file named **stored_questions** which contains all the questions you will need to play the game. Furthermore, a pdf file is included with all the questions and it´s answers, so that you can keep track of them.
