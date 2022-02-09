@@ -38,7 +38,7 @@ Project developed for "Introduction to programming II" of Systems Engineering.
 - The players take turns to answer
 - If the current player answers the question correctly, he continues playing. Contrary case, if the player answers incorrectly or skips the question, the turn is then passed onto the other player
 - While on the match, enter **"skp"** to skip any question you don´t know, which will remain pending and will be asked again when all other letters are finished.
-- The game ends when one of the players has answered all of his questions, without taking into account the state of the other player (if it still has pending questions).
+- The game ends when one of the players has answered all of his questions, without taking into account the state of the other player (it might still have pending questions).
 
 ##
 ### Extra Notes:
